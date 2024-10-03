@@ -1,0 +1,15 @@
+return {
+  home = require(... .. ".home"),
+  pfp = require(... .. ".pfp"),
+  tags = require(... .. ".taglist"),
+  tasks = require(... .. ".tasklist"),
+  layouts = require(... .. ".layoutbox"),
+  systray = require(... .. ".systray"),
+  clock = require(... .. ".clock"),
+  screenshot = require(... .. ".screeshotbtn"),
+  -- prayer = require(... .. ".prayer"),
+  -- clockk = require(... .. ".clockk"),
+  -- status = require(... .. ".status"),
+  -- screenshot_btn = require(... .. ".screeshot_btn"),
+  -- systray_btn = require(... .. ".systray_btn"),
+}
