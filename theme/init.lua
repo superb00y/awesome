@@ -21,9 +21,9 @@ _T.inner_gaps = 5
 _T.outer_gaps = 5
 _T.tags = { "1", "2", "3", "4", "5" }
 _T.titlebar_enabled = true
-_T.awesome_wall = true
+-- cairo_svg cairo_text awesome_wall
+_T.awesome_wall = "cairo_svg"
 _T.transparent_bar = true
-_T.wallpapers_path = color.wallpapers_path
 
 _T.red = color.red
 _T.orange = color.orange
