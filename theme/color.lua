@@ -8,6 +8,7 @@ local biscuit = {}
 local amarena = {}
 local oxocarbon = {}
 local tokyonight = {}
+local nightowl = {}
 
 everbluesh.bg_dark = "#101619"
 everbluesh.bg_dim = "#141b2a"
@@ -120,6 +121,30 @@ catppuccin.cursor = ".config/awesome/theme/colorscheme/oxocarbon/assets/cursor.p
 catppuccin.icon_theme = ".icons/numix-adwaita"
 catppuccin.wallpaper = "~/.config/awesome/theme/assets/wallpaper.png"
 catppuccin.wallpapers_path = "/home/youq-chan/.config/awesomeold/theme/colorscheme/catppuccin"
+
+nightowl.bg_dark = "#010b14"
+nightowl.bg_dim = "#081825"
+nightowl.bg_normal = "#011627"
+nightowl.bg_light = "#5f7e97"
+nightowl.mid_dark = "#4f7e9d"
+nightowl.mid_normal = "#013557"
+nightowl.mid_light = "#3f4f6f"
+nightowl.fg_normal = "#d6deeb"
+nightowl.red = "#ef5350"
+nightowl.orange = "#F78C6C"
+nightowl.green = "#22da6e"
+nightowl.yellow = "#ffeb95"
+nightowl.lightblue = "#5ca7e4"
+nightowl.blue = "#82aaff"
+nightowl.purple = "#A599E9"
+nightowl.magenta = "#c792ea"
+nightowl.cyan = "#7fdbca"
+nightowl.accent = nightowl.magenta
+nightowl.systray = nightowl.mid_normal
+nightowl.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+nightowl.avatar = ".config/awesome/assets/pfp3.jpg"
+nightowl.wallpaper = "~/.config/awesome/theme/assets/wallpaper.png"
+nightowl.wallpapers_path = "/home/youq-chan/.config/awesomeold/theme/colorscheme/catppuccin"
 
 tokyonight.bg_dark = "#16161e"
 tokyonight.bg_normal = "#1a1b26"
@@ -263,6 +288,10 @@ function theme.return_theme(color)
 
     ["oxocarbon"] = function()
       return oxocarbon
+    end,
+
+    ["nightowl"] = function()
+      return nightowl
     end,
   }
   return themes[color]()

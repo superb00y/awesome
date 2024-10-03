@@ -7,8 +7,9 @@ local icon_path = gfs.get_configuration_dir() .. "assets/"
 
 local _T = {}
 
--- color list: everbluesh catppuccin gruvbox_dark biscuit amarena tokyonight adwaita oxocarbon
-_T.theme = "tokyonight"
+-- color list: everbluesh catppuccin gruvbox_dark biscuit
+-- amarena tokyonight adwaita oxocarbon nigthowl
+_T.theme = "nightowl"
 local color = require("theme.color").return_theme(_T.theme)
 
 _T.font = "Iosevka Nerd Font Mono "
