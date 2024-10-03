@@ -1,0 +1,2 @@
+# awesomeWm
+awesome wm dots
