@@ -124,10 +124,8 @@ naughty.connect_signal("request::display", function(n)
               {
                 resize_strategy = "center",
                 widget = wibox.widget.imagebox,
-                image = n.icon or beautiful.awesome_icon,
-                clip_shape = user.style == "rounded" and gears.shape.circle
-                  or user.style == "semi-rounded" and helpers.rrect(10)
-                  or gears.shape.rectangle,
+                image = n.icon or beautiful.aweicon,
+                clip_shape = helpers.rrect(10),
               },
               margins = dpi(10),
               widget = wibox.container.margin,

@@ -2,7 +2,6 @@ local awful = require("awful")
 local home = os.getenv("HOME") .. "/"
 
 local User = {}
-User.theme = "biscuit"
 User.modkey = "Mod4" -- Windows/Super key
 User.modkey2 = "Mod1" -- Alt key
 User.terminal = "tilix"

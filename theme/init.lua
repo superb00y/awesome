@@ -61,7 +61,6 @@ end
 _T.menu_height = dpi(15)
 _T.menu_width = dpi(100)
 
-_T.layout_dwindle = gears.color.recolor_image(path .. "default/layouts/dwindle.png", color.fg_normal)
 _T.layout_tile = gears.color.recolor_image(icon_path .. "tile.svg", color.yellow)
 _T.layout_max = gears.color.recolor_image(icon_path .. "max.svg", color.fg_normal)
 _T.layout_floating = gears.color.recolor_image(icon_path .. "floating.svg", color.green)
@@ -70,17 +69,11 @@ _T.layout_fullscreen = gears.color.recolor_image(icon_path .. "fullscreen.svg", 
 _T.aweicon = gears.color.recolor_image(color.aweicon, _T.accent)
 _T.awesome_icon = require("beautiful.theme_assets").awesome_icon(dpi(100), _T.accent, color.bg_dark)
 
-_T.star = gears.color.recolor_image(icon_path .. "star.svg", _T.accent)
-_T.cookie = gears.color.recolor_image(icon_path .. "cookie3.svg", _T.accent)
-_T.moon = gears.color.recolor_image(icon_path .. "moon.svg", _T.accent)
-_T.cookie_small = gears.color.recolor_image(icon_path .. "cookie-small.svg", _T.accent)
-_T.linux = gears.color.recolor_image(icon_path .. "linux.svg", _T.fg_normal)
-
-_T.volumeicon = gears.color.recolor_image(icon_path .. "volume.svg", color.magenta)
-_T.volumeofficon = gears.color.recolor_image(icon_path .. "volume-off.svg", color.mid_normal)
-
-_T.wifiicon = gears.color.recolor_image(icon_path .. "wifi.svg", color.purple)
-_T.wifiofficon = gears.color.recolor_image(icon_path .. "wifi-off.svg", color.mid_normal)
+_T.star = gears.color.recolor_image(icon_path .. "/aweicon/star.svg", _T.accent)
+_T.cookie = gears.color.recolor_image(icon_path .. "/aweicon/cookie.svg", _T.accent)
+_T.moon = gears.color.recolor_image(icon_path .. "/aweicon/moon.svg", _T.accent)
+_T.cookie_small = gears.color.recolor_image(icon_path .. "/aweicon/cookie-small.svg", _T.accent)
+_T.linux = gears.color.recolor_image(icon_path .. "/aweicon/linux.svg", _T.fg_normal)
 
 _T.shotfull = gears.color.recolor_image(icon_path .. "fullshot.svg", color.red)
 _T.shotarea = gears.color.recolor_image(icon_path .. "areashot.svg", color.green)

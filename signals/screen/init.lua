@@ -11,7 +11,7 @@ wallpaper.setup({
   text = "superbOOy",
   font = "Another Danger - Demo",
   font_size = 200,
-  path = "/home/youq-chan/.config/awesome/assets/linux.svg",
+  path = "/home/youq-chan/.config/awesome/assets/cairo_svg/1298794.svg",
   colors = {
     bg = beautiful.bg_dim,
     fg = beautiful.fg_normal,

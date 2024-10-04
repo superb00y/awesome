@@ -9,6 +9,4 @@ require("widget.bar")
 -- 	require("widget.music")
 -- end
 
--- require("widget.menu")
--- require("widget.lock")
 -- require("widget.control_center")

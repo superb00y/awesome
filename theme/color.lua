@@ -29,7 +29,7 @@ everbluesh.magenta = "#c372d7"
 everbluesh.cyan = "#67cbe7"
 everbluesh.accent = everbluesh.green
 everbluesh.systray = everbluesh.mid_normal
-everbluesh.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+everbluesh.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
 everbluesh.avatar = ".config/awesome/assets/pfp3.jpg"
 
 biscuit.bg_dark = "#181515"
@@ -51,7 +51,7 @@ biscuit.purple = "#9F569A"
 biscuit.magenta = "#C45497"
 biscuit.accent = biscuit.cyan
 biscuit.systray = biscuit.mid_normal
-biscuit.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+biscuit.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
 biscuit.avatar = ".config/awesome/assets/pfp3.jpg"
 
 amarena.bg_dark = "#12161a"
@@ -73,7 +73,7 @@ amarena.magenta = "#b48ead"
 amarena.cyan = "#88c0d0"
 amarena.accent = amarena.orange
 amarena.systray = amarena.mid_normal
-amarena.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+amarena.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
 amarena.avatar = ".config/awesome/assets/pfp3.jpg"
 
 catppuccin.bg_dark = "#181825"
@@ -95,7 +95,7 @@ catppuccin.magenta = "#ed95d5"
 catppuccin.cyan = "#94e2d5"
 catppuccin.accent = catppuccin.purple
 catppuccin.systray = catppuccin.mid_normal
-catppuccin.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+catppuccin.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
 catppuccin.avatar = ".config/awesome/assets/pfp3.jpg"
 
 nightowl.bg_dark = "#010014"
@@ -117,7 +117,7 @@ nightowl.magenta = "#c792ea"
 nightowl.cyan = "#7fdbca"
 nightowl.accent = nightowl.blue
 nightowl.systray = nightowl.mid_normal
-nightowl.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+nightowl.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/star.svg"
 nightowl.avatar = ".config/awesome/assets/pfp3.jpg"
 
 tokyonight.bg_dark = "#16161e"
@@ -139,7 +139,7 @@ tokyonight.magenta = "#a589d7"
 tokyonight.cyan = "#7dcfff"
 tokyonight.accent = tokyonight.purple
 tokyonight.systray = tokyonight.mid_normal
-tokyonight.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+tokyonight.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
 tokyonight.avatar = ".config/awesome/assets/pfp3.jpg"
 
 gruvbox_dark.bg_dark = "#1d2021"
@@ -162,7 +162,7 @@ gruvbox_dark.magenta = "#b16286"
 gruvbox_dark.cyan = "#8ec07c"
 gruvbox_dark.accent = gruvbox_dark.green
 gruvbox_dark.systray = gruvbox_dark.mid_normal
-gruvbox_dark.aweicon = "/home/youq-chan/.config/awesome/assets/moon.svg"
+gruvbox_dark.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
 gruvbox_dark.avatar = ".config/awesome/assets/pfp3.jpg"
 
 adwaita.bg_dark = "#1e1e1e"
@@ -184,7 +184,7 @@ adwaita.purple = "#c061cb"
 adwaita.magenta = "#E05C91"
 adwaita.accent = adwaita.blue
 adwaita.systray = adwaita.bg_light
-adwaita.aweicon = "/home/youq-chan/.config/awesome/assets/star.svg"
+adwaita.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/star.svg"
 adwaita.avatar = ".config/awesome/assets/pfp3.jpg"
 
 oxocarbon.bg_dark = "#161616"
@@ -206,7 +206,7 @@ oxocarbon.purple = "#be95ff"
 oxocarbon.magenta = "#3ddbd9"
 oxocarbon.accent = oxocarbon.yellow
 oxocarbon.systray = oxocarbon.bg_light
-oxocarbon.aweicon = "/home/youq-chan/.config/awesome/assets/linux.svg"
+oxocarbon.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/linux.svg"
 oxocarbon.avatar = ".config/awesome/assets/pfp3.jpg"
 
 function theme.return_theme(color)

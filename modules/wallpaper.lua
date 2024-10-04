@@ -55,7 +55,7 @@ function setters.svg_wallpaper(args)
     colors.bg = args.colors.bg or colors.bg
     colors.accent = args.colors.accent or colors.accent
   end
-  local path = args.path or "/home/youq-chan/.config/awesome/assets/linux.svg"
+  local path = args.path or "/home/youq-chan/.config/awesome/assets/aweicon/linux.svg"
   for s in screen do
     gears.wallpaper.maximized(textwallpaper.svg_image(path, colors.bg, colors.accent, s), s, args.ignore_aspect)
   end
