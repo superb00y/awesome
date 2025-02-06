@@ -4,8 +4,8 @@ local home = os.getenv("HOME") .. "/"
 local User = {}
 User.modkey = "Mod4" -- Windows/Super key
 User.modkey2 = "Mod1" -- Alt key
-User.terminal = "tilix"
-User.term_cmd = "tilix -c"
+User.terminal = "ghostty"
+User.term_cmd = "ghostty -c"
 User.browser = os.getenv("BROWSER") or "vivaldi"
 User.editor = os.getenv("EDITOR") or "nvim"
 User.files = "nemo"
@@ -14,9 +14,9 @@ User.chatapp = "discord"
 User.files_cli = "ranger"
 User.music_enabled = true
 User.layouts = {
-  awful.layout.suit.tile,
-  awful.layout.suit.floating,
-  awful.layout.suit.max.fullscreen,
+	awful.layout.suit.tile,
+	awful.layout.suit.floating,
+	awful.layout.suit.max.fullscreen,
 }
 
 User.tags = { "1", "2", "3", "4", "5" }

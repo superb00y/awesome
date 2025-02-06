@@ -5,16 +5,16 @@ local naughty = require("naughty")
 local awful = require("awful")
 
 naughty.connect_signal("request::display_error", function(message, startup)
-  naughty.notification({
-    urgency = "critical",
-    title = "You fucked up hard" .. (startup and " during startup!" or "!"),
-    massage = message,
-  })
+	naughty.notification({
+		urgency = "critical",
+		title = "You fucked up hard" .. (startup and " during startup!" or "!"),
+		massage = message,
+	})
 end)
 
 beautiful.init(require("theme"))
 
-awful.util.shell = "fish"
+awful.util.shell = "bash"
 
 require("user")
 require("base")

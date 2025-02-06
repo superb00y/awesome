@@ -8,7 +8,8 @@ local biscuit = {}
 local amarena = {}
 local oxocarbon = {}
 local tokyonight = {}
-local nightowl = {}
+local nigthowl = {}
+local ayu_dark = {}
 
 everbluesh.bg_dark = "#101619"
 everbluesh.bg_dim = "#141b2a"
@@ -29,7 +30,7 @@ everbluesh.magenta = "#c372d7"
 everbluesh.cyan = "#67cbe7"
 everbluesh.accent = everbluesh.green
 everbluesh.systray = everbluesh.mid_normal
-everbluesh.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
+everbluesh.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/moon.svg"
 everbluesh.avatar = ".config/awesome/assets/pfp3.jpg"
 
 biscuit.bg_dark = "#181515"
@@ -51,7 +52,7 @@ biscuit.purple = "#9F569A"
 biscuit.magenta = "#C45497"
 biscuit.accent = biscuit.cyan
 biscuit.systray = biscuit.mid_normal
-biscuit.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
+biscuit.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/moon.svg"
 biscuit.avatar = ".config/awesome/assets/pfp3.jpg"
 
 amarena.bg_dark = "#12161a"
@@ -73,7 +74,7 @@ amarena.magenta = "#b48ead"
 amarena.cyan = "#88c0d0"
 amarena.accent = amarena.orange
 amarena.systray = amarena.mid_normal
-amarena.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
+amarena.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/moon.svg"
 amarena.avatar = ".config/awesome/assets/pfp3.jpg"
 
 catppuccin.bg_dark = "#181825"
@@ -95,30 +96,52 @@ catppuccin.magenta = "#ed95d5"
 catppuccin.cyan = "#94e2d5"
 catppuccin.accent = catppuccin.purple
 catppuccin.systray = catppuccin.mid_normal
-catppuccin.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
+catppuccin.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/moon.svg"
 catppuccin.avatar = ".config/awesome/assets/pfp3.jpg"
 
-nightowl.bg_dark = "#010014"
-nightowl.bg_dim = "#001424"
-nightowl.bg_normal = "#011627"
-nightowl.bg_light = "#224663"
-nightowl.mid_dark = "#022744"
-nightowl.mid_normal = "#003050"
-nightowl.mid_light = "#345e7b"
-nightowl.fg_normal = "#d6deeb"
-nightowl.red = "#ef5350"
-nightowl.orange = "#e7947c"
-nightowl.green = "#42ba71"
-nightowl.yellow = "#ffeb95"
-nightowl.lightblue = "#5ca7e4"
-nightowl.blue = "#82aaff"
-nightowl.purple = "#A599E9"
-nightowl.magenta = "#c792ea"
-nightowl.cyan = "#7fdbca"
-nightowl.accent = nightowl.blue
-nightowl.systray = nightowl.mid_normal
-nightowl.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/star.svg"
-nightowl.avatar = ".config/awesome/assets/pfp3.jpg"
+nigthowl.bg_dark = "#02101c"
+nigthowl.bg_dim = "#021320"
+nigthowl.bg_normal = "#011627"
+nigthowl.bg_light = "#032743"
+nigthowl.mid_dark = "#05385b"
+nigthowl.mid_normal = "#264e6e"
+nigthowl.mid_light = "#3d6e91"
+nigthowl.fg_normal = "#d6deeb"
+nigthowl.red = "#dc6563"
+nigthowl.orange = "#e7947c"
+nigthowl.green = "#42ba71"
+nigthowl.yellow = "#ffeb95"
+nigthowl.lightblue = "#5ca7e4"
+nigthowl.blue = "#82aaff"
+nigthowl.purple = "#A599E9"
+nigthowl.magenta = "#c792ea"
+nigthowl.cyan = "#7fdbca"
+nigthowl.accent = nigthowl.blue
+nigthowl.systray = nigthowl.mid_normal
+nigthowl.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/star.svg"
+nigthowl.avatar = ".config/awesome/assets/pfp3.jpg"
+
+ayu_dark.bg_dark = "#000017"
+ayu_dark.bg_dim = "#0f1115"
+ayu_dark.bg_normal = "#0d1017"
+ayu_dark.bg_light = "#131721"
+ayu_dark.mid_dark = "#1b2231"
+ayu_dark.mid_normal = "#2b364e"
+ayu_dark.mid_light = "#6c7380"
+ayu_dark.fg_normal = "#bfbdb6"
+ayu_dark.red = "#f07178"
+ayu_dark.orange = "#ffb454"
+ayu_dark.green = "#7fd962"
+ayu_dark.yellow = "#e6b673"
+ayu_dark.lightblue = "#59c2ff"
+ayu_dark.blue = "#39bae6"
+ayu_dark.purple = "#debfff"
+ayu_dark.magenta = "#dea6ff"
+ayu_dark.cyan = "#95e6cb"
+ayu_dark.accent = ayu_dark.cyan
+ayu_dark.systray = ayu_dark.mid_normal
+ayu_dark.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/star.svg"
+ayu_dark.avatar = ".config/awesome/assets/pfp3.jpg"
 
 tokyonight.bg_dark = "#16161e"
 tokyonight.bg_normal = "#1a1b26"
@@ -139,7 +162,7 @@ tokyonight.magenta = "#a589d7"
 tokyonight.cyan = "#7dcfff"
 tokyonight.accent = tokyonight.purple
 tokyonight.systray = tokyonight.mid_normal
-tokyonight.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
+tokyonight.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/moon.svg"
 tokyonight.avatar = ".config/awesome/assets/pfp3.jpg"
 
 gruvbox_dark.bg_dark = "#1d2021"
@@ -162,7 +185,7 @@ gruvbox_dark.magenta = "#b16286"
 gruvbox_dark.cyan = "#8ec07c"
 gruvbox_dark.accent = gruvbox_dark.green
 gruvbox_dark.systray = gruvbox_dark.mid_normal
-gruvbox_dark.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/moon.svg"
+gruvbox_dark.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/moon.svg"
 gruvbox_dark.avatar = ".config/awesome/assets/pfp3.jpg"
 
 adwaita.bg_dark = "#1e1e1e"
@@ -184,7 +207,7 @@ adwaita.purple = "#c061cb"
 adwaita.magenta = "#E05C91"
 adwaita.accent = adwaita.blue
 adwaita.systray = adwaita.bg_light
-adwaita.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/star.svg"
+adwaita.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/star.svg"
 adwaita.avatar = ".config/awesome/assets/pfp3.jpg"
 
 oxocarbon.bg_dark = "#161616"
@@ -206,48 +229,52 @@ oxocarbon.purple = "#be95ff"
 oxocarbon.magenta = "#3ddbd9"
 oxocarbon.accent = oxocarbon.yellow
 oxocarbon.systray = oxocarbon.bg_light
-oxocarbon.aweicon = "/home/youq-chan/.config/awesome/assets/aweicon/linux.svg"
+oxocarbon.aweicon = "/home/superb00y/.config/awesome/assets/aweicon/linux.svg"
 oxocarbon.avatar = ".config/awesome/assets/pfp3.jpg"
 
 function theme.return_theme(color)
-  local themes = {
-    ["everbluesh"] = function()
-      return everbluesh
-    end,
+	local themes = {
+		["everbluesh"] = function()
+			return everbluesh
+		end,
 
-    ["gruvbox_dark"] = function()
-      return gruvbox_dark
-    end,
+		["gruvbox_dark"] = function()
+			return gruvbox_dark
+		end,
 
-    ["biscuit"] = function()
-      return biscuit
-    end,
+		["biscuit"] = function()
+			return biscuit
+		end,
 
-    ["catppuccin"] = function()
-      return catppuccin
-    end,
+		["catppuccin"] = function()
+			return catppuccin
+		end,
 
-    ["amarena"] = function()
-      return amarena
-    end,
+		["amarena"] = function()
+			return amarena
+		end,
 
-    ["tokyonight"] = function()
-      return tokyonight
-    end,
+		["tokyonight"] = function()
+			return tokyonight
+		end,
 
-    ["adwaita"] = function()
-      return adwaita
-    end,
+		["adwaita"] = function()
+			return adwaita
+		end,
 
-    ["oxocarbon"] = function()
-      return oxocarbon
-    end,
+		["oxocarbon"] = function()
+			return oxocarbon
+		end,
 
-    ["nightowl"] = function()
-      return nightowl
-    end,
-  }
-  return themes[color]()
+		["nigthowl"] = function()
+			return nigthowl
+		end,
+
+		["ayu_dark"] = function()
+			return ayu_dark
+		end,
+	}
+	return themes[color]()
 end
 
 return theme

@@ -92,7 +92,9 @@ end
 
 function playerctl:set_loop_status(loop_status, player)
     if player ~= nil then
-        awful.spawn.with_shell("playerctl --player=" .. player .. " loop " .. loop_status)
+        awful.spawn.with_shell(
+            "playerctl --player=" .. player .. " loop " .. loop_status
+        )
     else
         awful.spawn.with_shell(self._private.cmd .. "loop " .. loop_status)
     end
@@ -110,9 +112,12 @@ function playerctl:cycle_loop_status(player)
     end
 
     if player ~= nil then
-        awful.spawn.easy_async_with_shell("playerctl --player=" .. player .. " loop", function(stdout)
-            set_loop_status(stdout)
-        end)
+        awful.spawn.easy_async_with_shell(
+            "playerctl --player=" .. player .. " loop",
+            function(stdout)
+                set_loop_status(stdout)
+            end
+        )
     else
         set_loop_status(self._private.loop_status)
     end
@@ -120,7 +125,9 @@ end
 
 function playerctl:set_position(position, player)
     if player ~= nil then
-        awful.spawn.with_shell("playerctl --player=" .. player .. " position " .. position)
+        awful.spawn.with_shell(
+            "playerctl --player=" .. player .. " position " .. position
+        )
     else
         awful.spawn.with_shell(self._private.cmd .. "position " .. position)
     end
@@ -130,7 +137,9 @@ function playerctl:set_shuffle(shuffle, player)
     shuffle = shuffle and "on" or "off"
 
     if player ~= nil then
-        awful.spawn.with_shell("playerctl --player=" .. player .. " shuffle " .. shuffle)
+        awful.spawn.with_shell(
+            "playerctl --player=" .. player .. " shuffle " .. shuffle
+        )
     else
         awful.spawn.with_shell(self._private.cmd .. "shuffle " .. shuffle)
     end
@@ -138,10 +147,13 @@ end
 
 function playerctl:cycle_shuffle(player)
     if player ~= nil then
-        awful.spawn.easy_async_with_shell("playerctl --player=" .. player .. " shuffle", function(stdout)
-            local shuffle = stdout == "on" and true or false
-            self:set_shuffle(not self._private.shuffle)
-        end)
+        awful.spawn.easy_async_with_shell(
+            "playerctl --player=" .. player .. " shuffle",
+            function(stdout)
+                local shuffle = stdout == "on" and true or false
+                self:set_shuffle(not self._private.shuffle)
+            end
+        )
     else
         self:set_shuffle(not self._private.shuffle)
     end
@@ -149,35 +161,41 @@ end
 
 function playerctl:set_volume(volume, player)
     if player ~= nil then
-        awful.spawn.with_shell("playerctl --player=" .. player .. " volume " .. volume)
+        awful.spawn.with_shell(
+            "playerctl --player=" .. player .. " volume " .. volume
+        )
     else
         awful.spawn.with_shell(self._private.cmd .. "volume " .. volume)
     end
 end
 
 local function emit_player_metadata(self)
-    local metadata_cmd = self._private.cmd .. "metadata --format 'title_{{title}}artist_{{artist}}art_url_{{mpris:artUrl}}player_name_{{playerName}}album_{{album}}' -F"
+    local metadata_cmd = self._private.cmd
+        .. "metadata --format 'title_{{title}}artist_{{artist}}art_url_{{mpris:artUrl}}player_name_{{playerName}}album_{{album}}' -F"
 
     awful.spawn.with_line_callback(metadata_cmd, {
         stdout = function(line)
-            local title = gstring.xml_escape(line:match('title_(.*)artist_')) or ""
-            local artist = gstring.xml_escape(line:match('artist_(.*)art_url_')) or ""
-            local art_url = line:match('art_url_(.*)player_name_') or ""
-            local player_name = line:match('player_name_(.*)album_') or ""
-            local album = gstring.xml_escape(line:match('album_(.*)')) or ""
+            local title = gstring.xml_escape(line:match("title_(.*)artist_"))
+                or ""
+            local artist = gstring.xml_escape(line:match("artist_(.*)art_url_"))
+                or ""
+            local art_url = line:match("art_url_(.*)player_name_") or ""
+            local player_name = line:match("player_name_(.*)album_") or ""
+            local album = gstring.xml_escape(line:match("album_(.*)")) or ""
 
-            art_url = art_url:gsub('%\n', '')
+            art_url = art_url:gsub("%\n", "")
             if player_name == "spotify" then
                 art_url = art_url:gsub("open.spotify.com", "i.scdn.co")
             end
 
-            if self._private.metadata_timer
+            if
+                self._private.metadata_timer
                 and self._private.metadata_timer.started
             then
                 self._private.metadata_timer:stop()
             end
 
-            self._private.metadata_timer = gtimer {
+            self._private.metadata_timer = gtimer({
                 timeout = self.debounce_delay,
                 autostart = true,
                 single_shot = true,
@@ -185,20 +203,48 @@ local function emit_player_metadata(self)
                     if title and title ~= "" then
                         if art_url ~= "" then
                             local art_path = os.tmpname()
-                            helpers.filesystem.save_image_async_curl(art_url, art_path, function()
-                                self:emit_signal("metadata", title, artist, art_path, album, player_name)
-                                capi.awesome.emit_signal("bling::playerctl::title_artist_album", title, artist, art_path)
-                            end)
+                            helpers.filesystem.save_image_async_curl(
+                                art_url,
+                                art_path,
+                                function()
+                                    self:emit_signal(
+                                        "metadata",
+                                        title,
+                                        artist,
+                                        art_path,
+                                        album,
+                                        player_name
+                                    )
+                                    capi.awesome.emit_signal(
+                                        "bling::playerctl::title_artist_album",
+                                        title,
+                                        artist,
+                                        art_path
+                                    )
+                                end
+                            )
                         else
-                            self:emit_signal("metadata", title, artist, "", album, player_name)
-                            capi.awesome.emit_signal("bling::playerctl::title_artist_album", title, artist, "")
+                            self:emit_signal(
+                                "metadata",
+                                title,
+                                artist,
+                                "",
+                                album,
+                                player_name
+                            )
+                            capi.awesome.emit_signal(
+                                "bling::playerctl::title_artist_album",
+                                title,
+                                artist,
+                                ""
+                            )
                         end
                     else
                         self:emit_signal("no_players")
                         capi.awesome.emit_signal("bling::playerctl::no_players")
                     end
-                end
-            }
+                end,
+            })
 
             collectgarbage("collect")
         end,
@@ -215,8 +261,16 @@ local function emit_player_position(self)
             local interval_sec = tonumber(interval) -- in seconds
             if length_sec and interval_sec then
                 if interval_sec >= 0 and length_sec > 0 then
-                    self:emit_signal("position", interval_sec, length_sec / 1000000)
-                    capi.awesome.emit_signal("bling::playerctl::position", interval_sec, length_sec / 1000000)
+                    self:emit_signal(
+                        "position",
+                        interval_sec,
+                        length_sec / 1000000
+                    )
+                    capi.awesome.emit_signal(
+                        "bling::playerctl::position",
+                        interval_sec,
+                        length_sec / 1000000
+                    )
                 end
             end
         end)
@@ -316,11 +370,15 @@ end
 local function new(args)
     args = args or {}
 
-    local ret = gobject{}
+    local ret = gobject({})
     gtable.crush(ret, playerctl, true)
 
-    ret.interval = args.interval or beautiful.playerctl_position_update_interval or 1
-    ret.debounce_delay = args.debounce_delay or beautiful.playerctl_debounce_delay or 0.35
+    ret.interval = args.interval
+        or beautiful.playerctl_position_update_interval
+        or 1
+    ret.debounce_delay = args.debounce_delay
+        or beautiful.playerctl_debounce_delay
+        or 0.35
 
     ret._private = {}
     ret._private.metadata_timer = nil

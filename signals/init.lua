@@ -1,5 +1,3 @@
-local user = require("user")
-
 require("signals.screen")
 require("signals.ruled")
 require("signals.client")

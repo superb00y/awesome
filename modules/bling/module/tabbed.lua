@@ -17,9 +17,8 @@ local beautiful = require("beautiful")
 local helpers = require(tostring(...):match(".*bling") .. ".helpers")
 
 local bar_style = beautiful.tabbar_style or "default"
-local bar = require(
-    tostring(...):match(".*bling") .. ".widget.tabbar." .. bar_style
-)
+local bar =
+    require(tostring(...):match(".*bling") .. ".widget.tabbar." .. bar_style)
 
 tabbed = {}
 
@@ -237,8 +236,12 @@ tabbed.update_tabbar = function(tabobj)
         local buttons = gears.table.join(awful.button({}, 1, function()
             tabbed.switch_to(tabobj, idx)
         end))
-        local wid_temp = bar.create(c, (idx == tabobj.focused_idx), buttons,
-            not tabobj_is_focused)
+        local wid_temp = bar.create(
+            c,
+            (idx == tabobj.focused_idx),
+            buttons,
+            not tabobj_is_focused
+        )
         flexlist:add(wid_temp)
     end
     -- add tabbar to each tabbed client (clients will be hided anyway)

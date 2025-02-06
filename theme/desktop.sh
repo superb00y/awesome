@@ -2,13 +2,9 @@
 
 # Paths
 config="$HOME/.config"
-nvim="$config/nvim"
-rofi="$config/rofi"
 zathura="$config/zathura/zathurarc"
 xresources="$HOME/.Xresources"
-kitty="$HOME/.config/kitty/kitty.conf"
 xsettingsd="$HOME/.config/xsettingsd/xsettingsd.conf"
-tilix_config="$HOME/.config/tilix/schemes/Theme.json"
 gtk="$HOME/.config/gtk-3.0/settings.ini"
 
 # Define themes
@@ -25,6 +21,9 @@ set_theme() {
 		B="#42be65"
 		M="#08bdba"
 		C="#3ddbd9"
+		GTK="tokyonight"
+		ICONS="tokyonight"
+		COURSOR="tokyonight"
 		;;
 	"gruvbox")
 		BG="#282828"
@@ -37,6 +36,9 @@ set_theme() {
 		B="#83a598"
 		M="#d3869b"
 		C="#8ec07c"
+		GTK="tokyonight"
+		ICONS="tokyonight"
+		COURSOR="tokyonight"
 		;;
 	"nord")
 		BG="#2e3440"
@@ -49,6 +51,9 @@ set_theme() {
 		B="#81a1c1"
 		M="#b48ead"
 		C="#88c0d0"
+		GTK="tokyonight"
+		ICONS="tokyonight"
+		COURSOR="tokyonight"
 		;;
 	"tokyonight")
 		BG="#1a1b26"
@@ -61,6 +66,9 @@ set_theme() {
 		B="#7aa2f7"
 		M="#bb9af7"
 		C="#7dcfff"
+		GTK="tokyonight"
+		ICONS="tokyonight"
+		COURSOR="tokyonight"
 		;;
 	"adwaita")
 		BG="#282828"
@@ -73,6 +81,9 @@ set_theme() {
 		B="#1c71d8"
 		M="#e05c91"
 		C="#5bc8af"
+		GTK="adwaita"
+		ICONS="oomox-adwaita"
+		COURSOR="adwaita"
 		;;
 	"catppuccin")
 		BG="#1e1e2e"
@@ -85,6 +96,9 @@ set_theme() {
 		B="#89b4fa"
 		M="#d6bffd"
 		C="#94e2d5"
+		GTK="catppuccin"
+		ICONS="catppucin"
+		COURSOR="catppucin"
 		;;
 	"biscuit")
 		BG="#221e1e"
@@ -97,6 +111,39 @@ set_theme() {
 		B="#4a5a8d"
 		M="#c45497"
 		C="#629386"
+		GTK="biscuit"
+		ICONS="biscuit"
+		COURSOR="biscuit"
+		;;
+	"nigthowl")
+		BG="#011627"
+		FG="#d6deeb"
+		BL="#011627"
+		WH="#d6deeb"
+		R="#dc6563"
+		G="#e7947c"
+		Y="#ffeb95"
+		B="#82aaff"
+		M="#c792ea"
+		C="#7fdbca"
+		GTK="Awesthetic-dark"
+		ICONS="adwaita"
+		COURSOR="Chroma-Black-S"
+		;;
+	"ayu_dark")
+		BG="#0d1017"
+		FG="#bfbdb6"
+		BL="#0d1017"
+		WH="#bfbdb6"
+		R="#f07178"
+		G="#7fd962"
+		Y="#e6b673"
+		B="#39bae6"
+		M="#dea6ff"
+		C="#95e6cb"
+		GTK="Awesthetic-dark"
+		ICONS="adwaita"
+		COURSOR="Chroma-Black-S"
 		;;
 	"amarena")
 		BG="#1a2026"
@@ -109,6 +156,9 @@ set_theme() {
 		B="#5e81ac"
 		M="#b48ead"
 		C="#88c0d0"
+		GTK="tokyonight"
+		ICONS="tokyonight"
+		COURSOR="tokyonight"
 		;;
 	"everbluesh")
 		BG="#1c1f24"
@@ -121,6 +171,9 @@ set_theme() {
 		B="#7aa2f7"
 		M="#d687ff"
 		C="#5fd7ff"
+		GTK="tokyonight"
+		ICONS="tokyonight"
+		COURSOR="tokyonight"
 		;;
 	*)
 		echo "Unknown theme: $1"
@@ -129,55 +182,19 @@ set_theme() {
 	esac
 }
 
-# Update terminal colors
-term() {
-	sed -i -e "s/*.foreground: .*/*.foreground: $FG/g" \
-		-e "s/*.background: .*/*.background: [92]$BG/g" \
-		-e "s/*.cursorColor: .*/*.cursorColor: [50]$G/g" \
-		-e "s/*.color0: .*/*.color0: $BL/g" \
-		-e "s/*.color8: .*/*.color8: $BL/g" \
-		-e "s/*.color7: .*/*.color7: $WH/g" \
-		-e "s/*.color15: .*/*.color15: $WH/g" \
-		-e "s/*.color1: .*/*.color1: $R/g" \
-		-e "s/*.color9: .*/*.color9: [60]$R/g" \
-		-e "s/*.color2: .*/*.color2: [90]$G/g" \
-		-e "s/*.color10: .*/*.color10: [70]$G/g" \
-		-e "s/*.color3: .*/*.color3: $Y/g" \
-		-e "s/*.color11: .*/*.color11: $Y/g" \
-		-e "s/*.color4: .*/*.color4: $B/g" \
-		-e "s/*.color12: .*/*.color12: $B/g" \
-		-e "s/*.color5: .*/*.color5: $M/g" \
-		-e "s/*.color13: .*/*.color13: [50]$M/g" \
-		-e "s/*.color6: .*/*.color6: $C/g" \
-		-e "s/*.color14: .*/*.color14: $C/g" $xresources
-
-	xrdb $xresources
-}
-
 gtk() {
-	sed -i -e "s/gtk-theme-name= .*/gtk-theme-name= $1/g" \
-		-e "s/gtk-icon-theme-name= .*/gtk-icon-theme-name= $2/g" \
-		-e "s/gtk-cursor-theme-name= .*/gtk-cursor-theme-name= $3/g" $gtk
+	sed -i -e "s/gtk-theme-name= .*/gtk-theme-name=$GTK/g" \
+		-e "s/gtk-icon-theme-name= .*/gtk-icon-theme-name=$ICONS/g" \
+		-e "s/gtk-cursor-theme-name= .*/gtk-cursor-theme-name=$COURSOR/g" $gtk
 
-	sed -i -e "s/Net\/ThemeName .*/Net\/ThemeName \"$1\"/g" \
-		-e "s/Net\/IconThemeName .*/Net\/IconThemeName \"$2\"/g" \
-		-e "s/Net\/CursorThemeName .*/Net\/CursorThemeName \"$3\"/g" $xsettingsd
+	sed -i -e "s/Net\/ThemeName .*/Net\/ThemeName \"$GTK\"/g" \
+		-e "s/Net\/IconThemeName .*/Net\/IconThemeName \"$ICONS\"/g" \
+		-e "s/Net\/CursorThemeName .*/Net\/CursorThemeName \"$COURSOR\"/g" $xsettingsd
 
-	sed -i -e "s/Xcursor.theme: .*/Xcursor.theme: $3/g" $xresources
+	sed -i -e "s/Xcursor.theme: .*/Xcursor.theme: $COURSOR/g" $xresources
 
 	killall xsettingsd
 	xsettingsd &
-}
-
-rofi() {
-	sed -i -e "s/bg: .*/bg: $BG;/g" \
-		-e "s/se: .*/se: $Ya4;/g" \
-		-e "s/fg: .*/fg: $FG;/g" \
-		-e "s/br: .*/br: $Rf0;/g" $rofi/colors.rasi
-}
-
-nvim() {
-	sed -i -e "s/^      colorscheme = .*/      colorscheme = \"$1\",/g" $nvim/lua/plugins/colorshemes.lua
 }
 
 zathura() {
@@ -195,28 +212,12 @@ zathura() {
 		-e "s/set inputbar-fg .*/set inputbar-fg '$R'/g" $zathura
 }
 
-tilix() {
-	# Update Tilix theme via dconf
-	# dconf write /com/gexperts/Tilix/profiles/list "['$profile']"
-	# dconf write /com/gexperts/Tilix/profiles/current "$profile"
-
-	dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/background-color "'$BG'"
-	dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/foreground-color "'$FG'"
-	dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/palette "'$BL:$R:$G:$Y:$B:$M:$C:$WH:$BL:$R:$G:$Y:$B:$M:$C:$WH'"
-}
-
 if [ -z "$1" ]; then
 	echo "Please provide a theme name (e.g., oxocarbon, gruvbox, nord)"
 	exit 1
 fi
 
 theme=$1
-
 set_theme $theme
-
-# nvim $theme
 zathura
-rofi
 gtk "oxocarbon" "oxocarbon" "Lighted-Pixel-Sky-vr1"
-term
-tilix
